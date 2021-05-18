@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage users - Axios</title>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+
+    <!-- link scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h1 class="heading">Users List</h1>
+        <table class="table" id="users-table">
+            <tr class="table__row">
+                <th class="table__heading">ID</th>
+                <th class="table__heading">FullName</th>
+                <th class="table__heading">DateOfBirth</th>
+                <th class="table__heading">Major</th>
+                <th class="table__heading">Job</th>
+                <th class="table__heading">Action</th>
+            </tr>
+        </table>
+        <div class="wrap-btn text-right">
+            <span class="button button--medium success-btn" id="add-user-btn">Add User</span>
+        </div>
+    </div>
+
+    <div class="modal" id="edit-modal">
+        <div class="modal__content">
+            <form class="form-control" id="edit-form" method="post">
+                <h3 class="form-control__header">Edit Form</h3>
+                <div class="form-control__row">
+                    <label class="form-control__label">ID</label>
+                    <input class="form-control__input" type="text" name="user-id" readonly>
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Name</label>
+                    <input class="form-control__input" type="text" name="user-name">
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Date of birth</label>
+                    <input class="form-control__input" type="text" name="user-date">
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Major</label>
+                    <input class="form-control__input" type="text" name="user-major">
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Job</label>
+                    <input class="form-control__input" type="text" name="user-job">
+                </div>
+                <div class="form-control__row text-right">
+                    <span class="button button--medium success-btn" id="save-edit-form">Save</span>
+                    <span class="button button--medium error-btn" id="cancel-edit-form">Cancel</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="add-modal">
+        <div class="modal__content">
+            <form class="form-control" id="add-form" method="post">
+                <h3 class="form-control__header">Add Form</h3>
+                <div class="form-control__row">
+                    <label class="form-control__label">Name</label>
+                    <input class="form-control__input" type="text" name="user-name" required>
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Date of birth</label>
+                    <input class="form-control__input" type="text" name="user-date" required>
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Major</label>
+                    <input class="form-control__input" type="text" name="user-major" required>
+                </div>
+                <div class="form-control__row">
+                    <label class="form-control__label">Job</label>
+                    <input class="form-control__input" type="text" name="user-job" required>
+                </div>
+                <div class="form-control__row text-right">
+                    <button class="button button--medium success-btn" id="save-add-form" type="submit">Save</button>
+                    <span class="button button--medium error-btn" id="cancel-add-form">Cancel</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- link script -->
+    <script src="main.js"></script>
+</body>
+</html>
